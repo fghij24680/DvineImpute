@@ -1,4 +1,8 @@
 #' Multivariate imputation
+#' @param x Dataframe with missing values
+#' @param order Imputation order (seq/hire)
+#' @param method Imputation method (dvinemed/dvinemean/lm/rq/rlm/lqr)
+
 #' Check monotonic missing pattern
 #' @export
 is.mono <- function(x,plot=FALSE){
@@ -27,8 +31,6 @@ is.mono <- function(x,plot=FALSE){
 }
 
 #' Multi-variable imputation
-#' @param order Imputation order (seq/hire)
-#' @param method Imputation method (dvinemed/dvinemean/lm/rq/rlm/lqr)
 #' @export
 multi.impute <- function(x,order='seq',method='dvinemed'){
   if(!is.mono(x)){

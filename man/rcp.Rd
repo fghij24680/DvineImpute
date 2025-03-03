@@ -6,6 +6,9 @@
 \usage{
 rcp(y, y_005, y_095, alpha = 0.9)
 }
+\arguments{
+\item{alpha}{Target probability}
+}
 \description{
 Calculate relative coverage probability
 }

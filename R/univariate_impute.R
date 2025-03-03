@@ -3,6 +3,15 @@
 #' @param uscale Dataframe is u-scale or x-scale
 #' @param print_pair If need to print pairs plot
 
+#' Internal function of getting fitted parameter
+#' @param fit A gamlss object
+#' @import gamlss
+fit_params <- function(fit){
+  fit_param=vector()
+  for(i in seq(1:length(fit$parameters))) fit_param = append(fit_param,fit[fit$parameters[i]])
+  return(fit_param)
+}
+
 #' D-vine median imputation
 #' @export
 uni.impute.dvinemed <- function(x,uscale=FALSE,print_pair=FALSE,alpha=0.5){

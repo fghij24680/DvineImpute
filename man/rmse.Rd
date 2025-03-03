@@ -9,6 +9,11 @@ rmse(a, b)
 rmse(a, b)
 }
 \arguments{
+\item{a}{Observed data}
+
+\item{b}{Imputed data
+Calculate RMSE}
+
 \item{y}{Dataframe without missing values}
 
 \item{y_005}{5\% percentile imputation}
@@ -21,5 +26,4 @@ rmse(a, b)
 Error metrics
 
 Validation metrics
-Calculate RMSE
 }

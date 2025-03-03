@@ -1,9 +1,12 @@
 #' Validation metrics
-#' Calculate RMSE
 #' @param y Dataframe without missing values
 #' @param y_005 5% percentile imputation
 #' @param y_050 Median imputation
 #' @param y_095 95% percentile imputation
+#' @param a Observed data
+#' @param b Imputed data
+
+#' Calculate RMSE
 #' @export
 rmse <- function(a,b) return(sqrt(mean((a-b)^2)))
 
@@ -14,6 +17,7 @@ rrse <- function(a,b){
 }
 
 #' Calculate relative coverage probability
+#' @param alpha Target probability
 #' @export
 rcp <- function(y,y_005,y_095,alpha=0.9) {
   covered <- (y >= y_005) & (y <= y_095)
@@ -34,6 +38,7 @@ sharpness <- function(y_005, y_095) {
 }
 
 #' Calculate interval score
+#' @param alpha Parameter
 #' @export
 interval_score <- function(y, y_005, y_095, alpha = 0.05) {
   interval_width <- y_095 - y_005
@@ -55,6 +60,7 @@ crps <- function(y,y_005,y_050,y_095){
 }
 
 #' Main scoring metrics interface
+#' @param alpha Parameter
 #' @export
 scoring_metrics <- function(y,y_005,y_050,y_095,alpha = 0.05){
   a=coverage_prob(y,y_005,y_095)

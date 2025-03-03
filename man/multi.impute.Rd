@@ -6,11 +6,6 @@
 \usage{
 multi.impute(x, order = "seq", method = "dvinemed")
 }
-\arguments{
-\item{order}{Imputation order (seq/hire)}
-
-\item{method}{Imputation method (dvinemed/dvinemean/lm/rq/rlm/lqr)}
-}
 \description{
 Multi-variable imputation
 }

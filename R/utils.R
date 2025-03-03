@@ -19,8 +19,3 @@ u_fit <- function(data,fit)
 q_fit <- function(data,fit)
   return(do.call(get(paste("q",fit$family[1],sep="")), c(list(data),fit_params(fit))))
 
-fit_params <- function(fit){
-  fit_param=vector()
-  for(i in seq(1:length(fit$parameters))) fit_param = append(fit_param,fit[fit$parameters[i]])
-  return(fit_param)
-}

@@ -6,6 +6,9 @@
 \usage{
 interval_score(y, y_005, y_095, alpha = 0.05)
 }
+\arguments{
+\item{alpha}{Parameter}
+}
 \description{
 Calculate interval score
 }

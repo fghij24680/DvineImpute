@@ -6,6 +6,9 @@
 \usage{
 scoring_metrics(y, y_005, y_050, y_095, alpha = 0.05)
 }
+\arguments{
+\item{alpha}{Parameter}
+}
 \description{
 Main scoring metrics interface
 }

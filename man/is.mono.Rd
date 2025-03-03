@@ -2,12 +2,18 @@
 % Please edit documentation in R/multi_impute.R
 \name{is.mono}
 \alias{is.mono}
-\title{Multivariate imputation
-Check monotonic missing pattern}
+\title{Multivariate imputation}
 \usage{
 is.mono(x, plot = FALSE)
 }
+\arguments{
+\item{x}{Dataframe with missing values}
+
+\item{order}{Imputation order (seq/hire)}
+
+\item{method}{Imputation method (dvinemed/dvinemean/lm/rq/rlm/lqr)
+Check monotonic missing pattern}
+}
 \description{
 Multivariate imputation
-Check monotonic missing pattern
 }

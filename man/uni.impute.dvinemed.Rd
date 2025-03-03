@@ -2,18 +2,10 @@
 % Please edit documentation in R/univariate_impute.R
 \name{uni.impute.dvinemed}
 \alias{uni.impute.dvinemed}
-\title{Univariate imputation}
+\title{D-vine median imputation}
 \usage{
 uni.impute.dvinemed(x, uscale = FALSE, print_pair = FALSE, alpha = 0.5)
 }
-\arguments{
-\item{x}{Dataframe with missing values}
-
-\item{uscale}{Dataframe is u-scale or x-scale}
-
-\item{print_pair}{If need to print pairs plot
-D-vine median imputation}
-}
 \description{
-Univariate imputation
+D-vine median imputation
 }
