@@ -15,15 +15,15 @@ is.mono <- function(x,plot=FALSE){
   
   for(i in seq(1,nrow(pt)-1,1)){
     if(!(
-      dplyr::count(pt[i,],1)==dplyr::count(pt[i+1,],1) | 
-      dplyr::count(pt[i,],1)==dplyr::count(pt[i+1,],1)+1))
+      count(pt[i,],1)==count(pt[i+1,],1) | 
+      count(pt[i,],1)==count(pt[i+1,],1)+1))
     {mono_flag = FALSE}
   }
   
   for(i in seq(1,ncol(pt)-1,1)){
     if(!(
-      dplyr::count(pt[,i],1)==dplyr::count(pt[,i+1],1) | 
-      dplyr::count(pt[,i],1)==dplyr::count(pt[,i+1],1)+1))
+      count(pt[,i],1)==count(pt[,i+1],1) | 
+      count(pt[,i],1)==count(pt[,i+1],1)+1))
     {mono_flag = FALSE}
   }
   

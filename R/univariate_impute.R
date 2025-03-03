@@ -175,7 +175,6 @@ uni.impute.lqr <- function(x,print_pair=FALSE,p=0.5){
 
 #' Main imputation interface
 #' @param method Imputation method (dvinemed/dvinemean/lm/rq/rlm/lqr)
-#' @import gamlss
 #' @export
 uni.impute <- function(x,method='dvinemed',uscale=FALSE,print_pair=FALSE){
   if(method == 'dvinemed'){
