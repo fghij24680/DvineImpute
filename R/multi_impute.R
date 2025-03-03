@@ -3,6 +3,9 @@
 #' @param order Imputation order (seq/hire)
 #' @param method Imputation method (dvinemed/dvinemean/lm/rq/rlm/lqr)
 
+#' Function used for is.mono
+count <- function(x,what) length(which(x==what))
+
 #' Check monotonic missing pattern
 #' @export
 is.mono <- function(x,plot=FALSE){
