@@ -1,5 +1,9 @@
 #' Validation metrics
 #' Calculate RMSE
+#' @param y Dataframe without missing values
+#' @param y_005 5% percentile imputation
+#' @param y_050 Median imputation
+#' @param y_095 95% percentile imputation
 #' @export
 rmse <- function(a,b) return(sqrt(mean((a-b)^2)))
 
@@ -42,7 +46,7 @@ interval_score <- function(y, y_005, y_095, alpha = 0.05) {
 #' @export
 crps <- function(y,y_005,y_050,y_095){
   crps_values <- sapply(1:length(y), function(i) {
-    crps_sample(
+    scoringRules::crps_sample(
       y[i],c(y_005[i], y_050[i], y_095[i]) 
     )
   })

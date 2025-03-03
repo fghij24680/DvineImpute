@@ -3,7 +3,7 @@
 #' @export
 is.mono <- function(x,plot=FALSE){
   
-  pt = md.pattern(x,plot = plot)
+  pt = mice::md.pattern(x,plot = plot)
   
   pt = pt[1:nrow(pt)-1,1:ncol(pt)-1]
   
@@ -11,15 +11,15 @@ is.mono <- function(x,plot=FALSE){
   
   for(i in seq(1,nrow(pt)-1,1)){
     if(!(
-      count(pt[i,],1)==count(pt[i+1,],1) | 
-      count(pt[i,],1)==count(pt[i+1,],1)+1))
+      dplyr::count(pt[i,],1)==dplyr::count(pt[i+1,],1) | 
+      dplyr::count(pt[i,],1)==dplyr::count(pt[i+1,],1)+1))
     {mono_flag = FALSE}
   }
   
   for(i in seq(1,ncol(pt)-1,1)){
     if(!(
-      count(pt[,i],1)==count(pt[,i+1],1) | 
-      count(pt[,i],1)==count(pt[,i+1],1)+1))
+      dplyr::count(pt[,i],1)==dplyr::count(pt[,i+1],1) | 
+      dplyr::count(pt[,i],1)==dplyr::count(pt[,i+1],1)+1))
     {mono_flag = FALSE}
   }
   
@@ -72,7 +72,7 @@ multi.impute <- function(x,order='seq',method='dvinemed'){
 multi.impute.dvine <- function(x,order='seq',method='dvinemed'){
   fit_list = list()
   for(i in seq(1,ncol(x),1)){
-    fit_dist = fitDist(unlist(x[,i]), type="realline")
+    fit_dist = gamlss::fitDist(unlist(x[,i]), type="realline")
     fit_list = append(fit_list,list(fit_dist))
   }
   
@@ -195,7 +195,7 @@ multi.impute.q <- function(x,order='seq',method='dvinemed',q=0.5){
 multi.impute.q.dvine <- function(x,order='seq',method='dvinemed',q=0.5){
   fit_list = list()
   for(i in seq(1,ncol(x),1)){
-    fit_dist = fitDist(unlist(x[,i]), type="realline")
+    fit_dist = gamlss::fitDist(unlist(x[,i]), type="realline")
     fit_list = append(fit_list,list(fit_dist))
   }
   

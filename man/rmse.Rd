@@ -8,6 +8,15 @@ rmse(a, b)
 
 rmse(a, b)
 }
+\arguments{
+\item{y}{Dataframe without missing values}
+
+\item{y_005}{5\% percentile imputation}
+
+\item{y_050}{Median imputation}
+
+\item{y_095}{95\% percentile imputation}
+}
 \description{
 Error metrics
 
